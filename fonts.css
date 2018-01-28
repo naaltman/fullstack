@@ -1,0 +1,22 @@
+.font_header{
+  font-size:30px;
+  font-weight:lighter;
+}
+.font_body{
+  font-size:30px;
+  font-weight:lighter;
+}
+.font_vid {
+  font-family: 'Vidaloka', serif;
+  font-weight: lighter;
+}
+.font_alegreya {
+  font-family: 'Alegreya SC', serif;
+  font-weight:bolder;
+}
+.font_quicksand{
+  font-family: 'Quicksand', sans-serif;
+}
+.font_karla{
+  font-family: 'Karla', sans-serif;
+}
