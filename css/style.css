@@ -1,0 +1,84 @@
+*{
+  box-sizing: border-box;
+}
+a{
+  font-family: 'Quicksand', sans-serif;
+  color: #000;
+  text-decoration: none;
+}
+.container{
+  display:flex;
+  flex-flow: row wrap;
+}
+.about_me{
+  width:100%;
+  font-family:'Quicksand', sans-serif;
+  margin:1%;
+  background-color: #9B9AD9;
+}
+.work{
+  width:100%;
+  font-family: 'Quicksand', sans-serif;
+  border: 1px solid #000;
+  justify-content: space-between;
+  margin:1%;
+}
+.desc_header{
+  font-family: 'Karla', sans-serif;
+  color: #EAF3FB;
+  background-color: #3F6E95;
+  border: 1px solid #000;
+}
+#me{
+  background-image: url("../images/nat.jpg");
+  background-repeat: no-repeat;
+  background-size:80px 80px;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px; /** container width and height */
+  flex-grow:0;
+}
+.about{
+  width:200px;
+  flex-grow:1;
+  font-family:'Quicksand', sans-serif;
+}
+.project1, .project2, .project3{
+  width:100%;
+  border: 1px solid #000;
+  font-family: 'Quicksand', sans-serif;
+  background-color: #8ED7B9;
+  margin:1%;
+}
+
+/* * Tablet view */
+@media (min-width: 768px) and (max-width: 991px){
+  .project1, .project2{
+    width:48%;
+  }
+  .project3{
+    width:100%;
+  }
+  .proj2{
+    text-align:right;
+  }
+  .proj3{
+    text-align: center;
+  }
+}
+
+/** Desktop vieiw */
+@media (min-width:992px){
+  .project1, .project2, .project3{
+    width:31%;
+  }
+  .proj1{
+    text-align: left;
+  }
+  .proj2{
+    text-align:center;
+  }
+  .proj3{
+    text-align:right;
+  }
+}

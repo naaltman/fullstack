@@ -1,62 +1,64 @@
 <!doctype html>
 <head>
   <meta charset="utf-8">
-  <title> Nat Altman </title>
-  <link rel="stylesheet" href="fonts.css">
-  <link rel="stylesheet" href="colors.css">
+  <meta name ="viewport" content="width=device-width, initial-scale=1">
+  <title>Nat Altman</title>
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/colors.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header>
     <nav id="navigation">
-      <a href="#About">About</a>
-      <a href="#Course">CS 379 - Full Stack</a>
-      <a href="#Portfolio">Portfolio</a>
+      <a href="#about_me">About Me</a> //
+      <a href="#course_info">Course Info</a> //
+      <a href="#portfolio">Portfolio</a>
     </nav>
   </header>
   <h1 class="font_quicksand color-primary-3">Web Portfolio</h1>
-  <section class="desc" id="About">
-    <h2 class="font_quicksand color-primary-3">About Me</h2>
-    <img src="images/nat.jpg" width="160" height="160" style="border-radius:50%" alt="favicon.png">
-    <p>
-      My name is Natalie Altman, I'm a senior at Bucknell University studying Computer Science with a minor in Women and Gender Studies, for more inqueries send me an <a href="mailto:nra002@bucknell.edu">email</a>
-    </p>
+
+  <section class="about_me">
+    <h2 class="desc_header">About Me</h2>
+    <div class="container">
+      <p class="about">My name is Natalie Altman I'm a senior at Bucknell University studying
+        Computer Science and minoring in Women and Gender Studies, feel free
+        to reach out to me on <a href="mailto:nra002@bucknell.edu">email</a>
+        for more information.</p>
+        <img id="me">
+    </div>
   </section>
-  <section class="desc" id="Course">
-    <h3 class="font_quicksand color-primary-3">About This Course</h3>
-    <p>
-      CSCI 379 - Full Stack Web Development with Professor Marchiori
-      MWF 11am Spring 2018 - Bucknell University
-    </p>
-  </section>
-  <section id="Portfolio">
-    <h3 class="font_quicksand color-primary-3"> My Portfolio </h3>
-    <p>
-      Find out more about me and the projects I'm up to this semester from this portfolio -- if you want to see more of the work I've done in past years click <a href="https://naaltman.github.io/portfolio">here</a>
-    </p>
-    <section>
-      <a href="fontfun.html">Font Fun Assignment</a>
-      <h4 class="proj">
-        Project 1
-      </h4>
-      <p>
-        Work in progress - check back later
-      </p>
+
+    <section class="work">
+      <h2 class="desc_header">About This Course</h2>
+        <p>CSCI 379-02 // Full Stack Web Development // Professor Marchiori //
+        Spring 2018 // Bucknell University</p>
+        <p>This course gives an introduction to developing modern web
+          applications covering the full web stack from implementing server-side
+          logic and databases, application frameworks, HTML5/CSS3/JS, and
+          UI/UX design.</p>
     </section>
-    <section>
-    <h4 class="proj">
-      Project 2
-    </h4>
-    <p>
-      Work in progress - check back later
-    </p>
-  </section>
-  <section>
-    <h4 class="proj">
-      Final Project
-    </h4>
-    <p>
-      Work in progress - check back later
-    </p>
-  </section>
-  </section>
+
+    <section class="work">
+      <h2 class="desc_header">My Portfolio</h2>
+      <p>Check out the projects I've been working on this semester below.</p>
+      <a href="https://naaltman.github.io/portfolio">Work I've Done
+        in Previous Years</a>
+      <a href="fontfun.html">Font Fun Assignment</a>
+    </section>
+
+  <div class="container">
+    <section class="project1">
+       <h4 class="proj1">Project 1</h4>
+         <p>Work in progress - check back later</p>
+     </section>
+
+     <section class="project2">
+       <h4 class="proj2">Project 2</h4>
+         <p>Work in progress - check back later</p>
+     </section>
+
+   <section class="project3">
+     <h4 class="proj3">Final Project</h4>
+       <p>Work in progress - check back later</p>
+  </div>
 </body>
