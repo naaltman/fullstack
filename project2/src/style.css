@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:800');
+@import url('https://fonts.googleapis.com/css?family=Oswald:700');
+@import url('https://fonts.googleapis.com/css?family=PT+Mono');
+@import url('https://fonts.googleapis.com/css?family=Gentium+Book+Basic');
+#open-sans{
+  font-family: 'Open Sans', sans-serif;
+}
+
+#pt-mono{
+  font-family: 'PT Mono', monospace;
+}
+
+#gentium{
+  font-family: 'Gentium Book Basic', serif;
+
+}
+
+#color-block{
+  background-color: #cce6ff;
+}
+
+#bu-orange{
+  background-color: #ffd9b3;
+}
+
+#faded-blue{
+  background-color: #99bbff;
+}
+
+img.bg {
+  /* Set rules to fill background */
+  min-height: 100%;
+  min-width: 1024px;
+
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+
+  /* Set up positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
+}
