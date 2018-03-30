@@ -45,7 +45,23 @@
   "Parker Watson", "Haipu Sun", "Ryan Pencak", "Dan Kershner",
   "John Venditti", "Jacob Mendelowitz", "Dunni Adenuga", "Jeff Lee",
   "Uttam Kumaran", "Jack Hall-Tipping"];
+
+  function lastName(a,b){
+    var lastA = a.split(" ").pop().toUpperCase();
+    var lastB = b.split(" ").pop().toUpperCase();
+    if (lastA > lastB){
+      return 1;
+    }
+    if(lastA < lastB){
+      return -1;
+    }
+    return 0;
+  };
+  // sort by last name
+  names = names.sort(lastName)
+  console.log(names)
   var paired = [];
+  var lev = new Levenshtein()
   while (names.length > 1){
     x = names[0]
     if(x[0].match(/[AEIOUaeiou]/)){
@@ -53,7 +69,7 @@
       var ham = new Hamming(x, names[1]);
       var dist = ham.distance();
       var found_ind = 1;
-      for(i = 2; i < names.length-1; i++){
+      for(i = 2; i < names.length; i++){
         var temp_hamming = new Hamming(x, names[i]);
         var temp_dist = temp_hamming.distance();
         if(temp_dist < dist){
@@ -64,12 +80,12 @@
     }
     else{
       // starts with a consonant, use levenshtein
-      var lev = new Levenshtein(x, names[1]);
-      var dist = lev.distance();
+      //var lev = new Levenshtein(x, names[1]);
+      var dist = lev.distance(x, names[1]);
       var found_ind = 1;
-      for(i = 2; i < names.length-1; i++){
-        var temp_lev = new Levenshtein(x, names[i]);
-        var temp_dist = temp_lev.distance();
+      for(i = 2; i < names.length; i++){
+        //var temp_lev = new Levenshtein(x, names[i]);
+        var temp_dist = lev.distance(x,names[i]);
         if(temp_dist < dist){
           dist = temp_dist;
           found_ind = i;
@@ -77,10 +93,13 @@
       }
     }
     // remove x and y from the list of unpaired
-    pair = x + " " + names[found_ind];
+    pair = x + " " + names[found_ind] + " distance: " + dist;
     paired.push(pair);
-    new_names = names.splice(found_ind, 1);
-    names = names.slice(1)
+    console.log(names)
+    names.splice(found_ind, 1);
+    console.log("splices names " + names)
+    names.splice(0,1)
+    console.log(names)
   }
   console.log(paired);
 })(window);

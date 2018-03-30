@@ -1,9 +1,7 @@
 /* ref https://github.com/gustf/js-levenshtein */
 
-function Levenshtein(a, b){
-   // var self = this;
-   this.a = a;
-   this.b = b;
+function Levenshtein(){
+
 }
 Levenshtein.prototype._min = function(d0, d1, d2, bx, ay){
     return d0 < d1 || d2 < d1
@@ -14,29 +12,30 @@ Levenshtein.prototype._min = function(d0, d1, d2, bx, ay){
             ? d1
             : d1 + 1;
 }
-Levenshtein.prototype.distance = function(){
+Levenshtein.prototype.distance = function(a,b){
   var self = this;
-  if (self.a === self.b) {
+  if (a === b) {
+    console.log("!!!")
     return 0;
   }
 
-  if (self.a.length > self.b.length) {
-    var tmp = self.a;
-    self.a = self.b;
-    self.b = tmp;
+  if (a.length > b.length) {
+    var tmp = a;
+    a = b;
+    b = tmp;
   }
 
-  var la = self.a.length;
-  var lb = self.b.length;
+  var la = a.length;
+  var lb = b.length;
 
-  while (la > 0 && (self.a.charCodeAt(la - 1) === self.b.charCodeAt(lb - 1))) {
+  while (la > 0 && (a.charCodeAt(la - 1) === b.charCodeAt(lb - 1))) {
     la--;
     lb--;
   }
 
   var offset = 0;
 
-  while (offset < la && (self.a.charCodeAt(offset) === self.b.charCodeAt(offset))) {
+  while (offset < la && (a.charCodeAt(offset) === b.charCodeAt(offset))) {
     offset++;
   }
 
@@ -65,14 +64,14 @@ Levenshtein.prototype.distance = function(){
 
   for (y = 0; y < la; y++) {
     vector.push(y + 1);
-    vector.push(self.a.charCodeAt(offset + y));
+    vector.push(a.charCodeAt(offset + y));
   }
 
   for (; (x + 3) < lb;) {
-    bx0 = self.b.charCodeAt(offset + (d0 = x));
-    bx1 = self.b.charCodeAt(offset + (d1 = x + 1));
-    bx2 = self.b.charCodeAt(offset + (d2 = x + 2));
-    bx3 = self.b.charCodeAt(offset + (d3 = x + 3));
+    bx0 = b.charCodeAt(offset + (d0 = x));
+    bx1 = b.charCodeAt(offset + (d1 = x + 1));
+    bx2 = b.charCodeAt(offset + (d2 = x + 2));
+    bx3 = b.charCodeAt(offset + (d3 = x + 3));
     dd = (x += 4);
     for (y = 0; y < vector.length; y += 2) {
       dy = vector[y];
@@ -89,7 +88,7 @@ Levenshtein.prototype.distance = function(){
     }
   }
   for (; x < lb;) {
-    bx0 = self.b.charCodeAt(offset + (d0 = x));
+    bx0 = b.charCodeAt(offset + (d0 = x));
     dd = ++x;
     for (y = 0; y < vector.length; y += 2) {
       dy = vector[y];
